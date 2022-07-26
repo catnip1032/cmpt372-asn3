@@ -1,0 +1,39 @@
+/* Style for NoteForm component */
+
+.formElements {
+  margin: auto;
+  padding: 20px 10px 0px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.formLabels {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.input {
+  padding: 8px;
+  margin: 1px 5px 10px 0px;
+  font-size: large;
+  border-radius: 5px;
+  border-style: ridge;
+  font-family: Verdana, sans-serif;
+  white-space: pre-line;
+}
+
+.input:hover {
+  outline:solid 3px #e9c4cd;
+}
+
+.input:focus{
+  outline:solid 3px #f3a9bb;
+}
+
+.inputFieldWarning {
+  display: block;
+  margin: auto;
+  text-align: center;
+  font-weight: 700;
+  color: #bc1a43;
+}

@@ -1,0 +1,28 @@
+version: "3.7"
+services:
+  database:
+    container_name: database
+    image: catnip1032/asn3_pg
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=asn3_db
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+  web:
+    container_name: asn3_frontend
+    image: catnip1032/asn3_node
+    depends_on:
+      - database
+    environment:
+      - PGHOST=database
+      - PGUSER=postgres
+      - PGDATABASE=asn3_db
+      - PGPASSWORD=password
+      - PGPORT=5432
+    ports:
+      - "3001:3001"
+volumes:
+  pgdata:
